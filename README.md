@@ -14,9 +14,10 @@ My daily JavaScript problem-solving journey. After completing HTML & CSS, my mai
 
 ## 📂 Challenges Log
 
-| Challenge No | Challenge Name | Core Concepts Learned | Folder Link |
+| No | Folder / Category | Topics & Concepts | Folder Link |
 | :---: | :--- | :--- | :---: |
-| **#01** | Create Hello World Function | Higher-Order Functions, Closures, Function Returning Function | [View Code](./challenge-no-1) |
+| **01** | **Basics JS** | Syntax, Data Types, Conditionals, Core Logic | [View Code](./01-Basics-Js) |
+| **02** | **JS Challenges** | HOFs, Closures, Function Factory, Problem Solving | [View Code](./js-challenges-fld) |
 
 ---
 
