@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# js-logic-vault
-A structured journey of mastering JavaScript core fundamentals, DOM manipulation, and modern web application logic through daily hands-on challenges and functional mini-projects. Documented with clean code, logic breakdowns, and live visual previews.
-=======
 # ⚡ JS Logic Vault
 
 My daily JavaScript problem-solving journey. After completing HTML & CSS, my main focus in this repository is deeply understanding **JavaScript, logic-building, DOM manipulation, and core fundamentals**. I will be solving and uploading one challenge here every day.
@@ -33,4 +29,3 @@ My daily JavaScript problem-solving journey. After completing HTML & CSS, my mai
 ---
 
 *Maintained by Sarhan Ali Ansari*
->>>>>>> 9f92026cf84d55280c3cc44d55cdd60f52ee8370
