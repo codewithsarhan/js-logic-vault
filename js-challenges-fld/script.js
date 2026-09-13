@@ -43,3 +43,28 @@
 //     },
 //   };
 // };
+
+// Challenge #4
+
+// let createCounter = (init) => {
+  
+// let currVal = init;
+
+//   return {
+//     increment: () => {
+//       return ++currVal;
+//     },
+
+//     decrement: () => {
+//       return --currVal;
+//     },
+
+//     reset: () => {
+
+//       currVal = init ;  
+//       return currVal;
+//     },
+//   };
+// };
+
+// Challenge # 5
