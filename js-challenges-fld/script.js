@@ -68,3 +68,32 @@
 // };
 
 // Challenge # 5
+
+
+// var map = (arr , fn) => {
+
+// let emptyArray = [ ] ;
+
+// for(let i = 0 ; i < arr.length ; i++){
+
+// let result = fn(arr[i] , i)    
+// emptyArray.push(result)
+
+// }    
+
+// return emptyArray ;
+
+// }
+
+// Challenge no 6 ;
+
+// let name = "  ali hassan "
+// let age = 25 ;
+// let isStudent = true ;
+
+// let nameValue = name.trim().toUpperCase();
+
+// let afterAge = age + 5 ;
+
+// console.log(`Student Name Is ${nameValue} Its Age ${age} and after 5 years ${afterAge}`);
+
