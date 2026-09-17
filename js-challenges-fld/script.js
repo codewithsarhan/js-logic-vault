@@ -1,13 +1,13 @@
-// Mini Challenge Js ;
+var reduce = (nums, fn, init) =>{
+  
+  let result = init ;
 
-let filter = (arr, fn) => {
-  let result = [];
+  for(let i = 0 ; i < nums.length ; i++){
 
-  for (let i = 0; i < arr.length; i++) {
-    if (fn(arr[i], i)) {
-      result.push(arr[i]);
-    }
+   result = (fn( result,nums[i] ));
+
   }
 
-  return result;
+  return result ;
+
 };
