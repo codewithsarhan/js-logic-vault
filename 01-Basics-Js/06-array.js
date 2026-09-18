@@ -3,8 +3,6 @@
 // let marvelHeros = ["Ironman" , "CaptainAmerica" , "Thor" , "Hulk"];
 // let dcHeros = ["Batman" , "Superman" , "Flash" , "Shazam"];
 
-
-
 // Push Method :=
 // marvelHeros.push(dcHeros);
 // console.log(marvelHeros);
@@ -27,7 +25,7 @@
 // let nested_array = [1,2,3,[2,3,4,],4,[5,6,[7,8,]]];
 // console.log(nested_array.flat(Infinity));
 // Flat Method use to convert nested array into one array ;
-// flat method istemal hota hai badalna ka liya jo ek ka andar ek hota hain unko ek array me karna ka liya 
+// flat method istemal hota hai badalna ka liya jo ek ka andar ek hota hain unko ek array me karna ka liya
 
 // isArray Method :=
 
