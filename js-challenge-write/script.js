@@ -1,40 +1,35 @@
-// Smart Event Pass & Booking Manager ;
+// E-Commerce Product Catalog Processor
 
-let userNamePrompt = prompt("Enter Your Name");
-let promoCode = prompt("Enter Promo Code");
+// Server se milne waale mixed product lists
+const electronics = ["Laptop", "Smartphone", "Headphones"];
+const accessories = ["Smartwatch", "Power Bank"];
 
-let userName = userNamePrompt.toLowerCase().trim();
-console.log(userName);
+// Kuch complex / nested data
+const rawCategories = ["Tech", ["Mobile", ["Gadgets"]], "Audio"];
 
-if (promoCode === "coding2026") {
-  console.log(`Promo Code Match : ${promoCode}`);
-} else {
-  console.log(`Incorrect Promo Code`);
-}
+// Server response ki non-array string value
+const singleCategory = "Gaming";
 
-let ticketPrice = 1500;
-let luckyDraw = Math.floor(Math.random() * (25 - 5 + 1) + 5);
-let ticktFnlPrc = ticketPrice - ticketPrice * (luckyDraw / 100);
-console.log(ticktFnlPrc);
+// Multiple random product metrics (different datatypes)
+const score1 = 98;
+const score2 = "Top Rated";
+const score3 = true;
 
-let startDate = new Date("2026-09-17");
-let futureDate = new Date("2026-10-1");
+let flat_Raw_Category = rawCategories.flat(2);
+console.log(flat_Raw_Category);
 
-let diffTim = futureDate - startDate;
-let diffDays = diffTim / (1000 * 60 * 60 * 24);
+let allProducts = accessories.concat(electronics);
+console.log(allProducts);
 
-console.log(`${diffDays.toFixed(0)} Days Later`);
+let single_Category_Element = Array.from(singleCategory);
+console.log(single_Category_Element);
+ 
+let combineScore = [score1 ,score2 , score3];
+console.log(combineScore);
 
-let allBooking = [];
+console.log(Array.isArray(allProducts));
 
-let bookingObject = {
-  userName,
-  diffDays,
-  promoCode,
-  ticktFnlPrc,
-};
+accessories.push(electronics);
+console.log(accessories);
 
-let objectPush = allBooking.push(bookingObject);
-console.log(objectPush);
-console.log(allBooking[0]);
-
+// Today I Will Comlplete This Challenge With Fun And Logic :=
