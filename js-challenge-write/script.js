@@ -1,35 +1,28 @@
-// E-Commerce Product Catalog Processor
+//          "The Vault & Agent System"           //
+//       :================================:      //
 
-// Server se milne waale mixed product lists
-const electronics = ["Laptop", "Smartphone", "Headphones"];
-const accessories = ["Smartwatch", "Power Bank"];
+const secretKey = Symbol("secretKey");
 
-// Kuch complex / nested data
-const rawCategories = ["Tech", ["Mobile", ["Gadgets"]], "Audio"];
+const agent = {
+  name: "Agent 007",
+  codeName: "Shadow",
+  characterLevel: 5,
+  [secretKey]: "ALPHA-123",
 
-// Server response ki non-array string value
-const singleCategory = "Gaming";
+  getDetails: function () {
+    console.log(`Agent Name: ${this.name}, Level: ${this.characterLevel}`);
+  },
+};
 
-// Multiple random product metrics (different datatypes)
-const score1 = 98;
-const score2 = "Top Rated";
-const score3 = true;
+const targetProp = "codeName";
 
-let flat_Raw_Category = rawCategories.flat(2);
-console.log(flat_Raw_Category);
+console.log(agent[targetProp]);
+console.log(agent[secretKey]);
 
-let allProducts = accessories.concat(electronics);
-console.log(allProducts);
+agent.getDetails();
 
-let single_Category_Element = Array.from(singleCategory);
-console.log(single_Category_Element);
- 
-let combineScore = [score1 ,score2 , score3];
-console.log(combineScore);
+Object.freeze(agent);
+agent.characterLevel = 10;
 
-console.log(Array.isArray(allProducts));
+console.log(agent);
 
-accessories.push(electronics);
-console.log(accessories);
-
-// Today I Will Comlplete This Challenge With Fun And Logic :=
