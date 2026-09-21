@@ -1,27 +1,38 @@
-//          "The Vault & Agent System"           //
-//       :================================:      //
+// Profile Orbit :================================================
 
-const secretKey = Symbol("secretKey");
+let mySym = Symbol("id");
 
-const agent = {
-  name: "Agent 007",
-  codeName: "Shadow",
-  characterLevel: 5,
-  [secretKey]: "ALPHA-123",
-
-  getDetails: function () {
-    console.log(`Agent Name: ${this.name}, Level: ${this.characterLevel}`);
+let userProfile = {
+  name: "sarhan",
+  age: 20,
+  skills: "Mern Stack Web App Development",
+  [mySym]: "Shadow",
+  education: {
+    degree: {
+      insititue: "Learnify Acadmey",
+    },
+  },
+  wellcomeMsg: function () {
+    console.log(`My Name Is ${this.name} and My Age Is ${this.age}`);
   },
 };
 
-const targetProp = "codeName";
+console.log(userProfile?.education?.degree?.insititue);
+console.log(userProfile.name, userProfile.age, userProfile[mySym]);
 
-console.log(agent[targetProp]);
-console.log(agent[secretKey]);
+let Obj1 = {
+  location: "Karachi",
+};
 
-agent.getDetails();
+let Obj2 = {
+  socialLinks: "Fb,Tw,Li,Yt",
+};
 
-Object.freeze(agent);
-agent.characterLevel = 10;
+Object.assign(userProfile, Obj1, Obj2);
 
-console.log(agent);
+console.log(userProfile);
+
+Object.freeze(userProfile);
+
+userProfile.age = 25;
+console.log(userProfile.age);
