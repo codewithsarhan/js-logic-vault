@@ -1,38 +1,20 @@
-// Profile Orbit :================================================
+// :================= "Smart Cart Invoice Generator" ===============:
 
-let mySym = Symbol("id");
+const cart = [
+  { name: "wireless mouse", price: 1200, quantity: 2, addedDate: "2026-09-15" },
+  { name: "KEYBOARD", price: 3500, quantity: 1, addedDate: "2026-09-20" },
+  { name: "usb cable", price: 450, quantity: 3, addedDate: "2026-09-10" },
+];
 
-let userProfile = {
-  name: "sarhan",
-  age: 20,
-  skills: "Mern Stack Web App Development",
-  [mySym]: "Shadow",
-  education: {
-    degree: {
-      insititue: "Learnify Acadmey",
-    },
-  },
-  wellcomeMsg: function () {
-    console.log(`My Name Is ${this.name} and My Age Is ${this.age}`);
-  },
-};
+const discountCode = "SAVE10";
 
-console.log(userProfile?.education?.degree?.insititue);
-console.log(userProfile.name, userProfile.age, userProfile[mySym]);
+for (let val of cart) {
+  let firstPrt = val.name.charAt(0).toUpperCase();
+  let secPrt = val.name.slice(1);
+  let stroevalue = val.name;
+  val.name = firstPrt.concat(secPrt);
+  console.log(`Item Name :${stroevalue}`);
 
-let Obj1 = {
-  location: "Karachi",
-};
-
-let Obj2 = {
-  socialLinks: "Fb,Tw,Li,Yt",
-};
-
-Object.assign(userProfile, Obj1, Obj2);
-
-console.log(userProfile);
-
-Object.freeze(userProfile);
-
-userProfile.age = 25;
-console.log(userProfile.age);
+  let subtotal = val.price * val.quantity;
+  console.log(`Subtotal :${subtotal}`);
+}
