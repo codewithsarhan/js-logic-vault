@@ -40,3 +40,15 @@ let obj2 = { 3:"C" , 4:"D"}
 // So We Will Learn Object Merging Method Complete :==================
 
 
+// Object Destructuring :================
+
+// let myObject = {
+
+// name : "sarhan" ,
+// age : 15 ,
+// isLoggedIn : false ,
+
+// }
+
+// let {isLoggedIn : login} = myObject;
+// console.log(login);
