@@ -1,39 +1,27 @@
-// Profile Orbit :================================================
+//  ++++++++++++++++++++ Smart Student Report Card ++++++++++++++++++++
 
-let mySym = Symbol("id");
-
-let userProfile = {
-  name: "sarhan",
-  age: 20,
-  skills: "Mern Stack Web App Development",
-  [mySym]: "Shadow",
-  education: {
-    degree: {
-      insititue: "Learnify Acadmey",
-    },
-  },
-  wellcomeMsg: function () {
-    console.log(`My Name Is ${this.name} and My Age Is ${this.age}`);
-  },
+let student = {
+  name: "Sarhan",
+  age: 16,
+  subject: ["Math", "English", "Science"],
 };
 
-console.log(userProfile?.education?.degree?.insititue);
-console.log(userProfile.name, userProfile.age, userProfile[mySym]);
+let marks = [85, 90, 78];
 
-let Obj1 = {
-  location: "Karachi",
-};
+let maxScore = Math.max(...marks);
+console.log(maxScore);
 
-let Obj2 = {
-  socialLinks: "Fb,Tw,Li,Yt",
-};
+let averageMarks = Math.round(
+  marks.reduce((sum, num) => sum + num, 0) / marks.length,
+);
+console.log(averageMarks);
 
-Object.assign(userProfile, Obj1, Obj2);
+let todayDate = new Date();
+let dateString = todayDate.toDateString();
 
-console.log(userProfile);
+function generateReport() {
+  return `Student Name: ${student.name} | Max MArks : ${maxScore} | Avg : ${averageMarks} Today Date : ${dateString}`;
+}
 
-Object.freeze(userProfile);
-
-userProfile.age = 25;
-console.log(userProfile.age);
+console.log(generateReport());
 
