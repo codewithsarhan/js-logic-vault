@@ -1,4 +1,4 @@
-// Today I Will Learn Function In JavaScript :====================
+// Today I Will Learn Function In JavaScript :============
 
 // console.log(1);
 // console.log(2);
@@ -38,3 +38,50 @@
 
 // console.log(myFunction(2,3))
 
+// ===::: Today I Will Discuss About Function In Js :::===
+
+// Firstly Discuss Access Multiplie value in js :==
+
+// function spreadValueFunction (...num1){
+
+// return num1
+
+// }
+
+// console.log(spreadValueFunction(100,200,300,400,500,600));
+
+
+let myObject = {
+
+    name: "Sarhan ALi Ansari",
+    class: 11,
+
+}
+
+function accessObject(myAccessObject) {
+
+return console.log(`My Name is ${myAccessObject.name} 
+and my CLass is ${myAccessObject.class}`);
+
+
+}
+
+// accessObject(myObject)
+// accessObject({
+
+//     name : "khalid" ,
+//     class : 14 ,
+
+// })
+
+
+let myArray = [100,200,300,400,500,600,700];
+
+function accessArray (arrayAccess){
+
+return console.log(arrayAccess[4]);
+
+}
+
+// accessArray(myArray)
+// accessArray([10,20,30,40,50,60,60])
