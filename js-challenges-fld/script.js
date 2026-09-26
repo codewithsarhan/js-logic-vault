@@ -1,47 +1,47 @@
-// "Student Data Handler"
+// Fitness Tracker
 
-function calculateMarks(num1, num2, num3) {
+const userDetails = {
+  name: "Sarhan",
+  age: 16,
+  weight: 48,
+  height: 174,
+  todayDate: new Date(),
+  joinDate: new Date("2026-06-01")
+};
 
-  return console.log(
-    `Total Marks Is :==${num1 + num2 + num3}`
-  );
+const workoutTimes = [120, 80, 90, 100, 94];
 
+// Total workout minutes calculate karna
+const totalWorkoutMinutes = workoutTimes.reduce(
+  (accumulator, current) => accumulator + current, 
+  0
+);
 
+// Calories burn calculate karna (Function)
+function calculateCalories(minutes) {
+  const totalCalories = minutes * 7.5;
+  return Math.round(totalCalories);
 }
 
-calculateMarks(200, 300, 400)
-
-function getAllScores(...scores) {
-
-  return console.log(scores)
-
+// BMI / Mass calculate karna
+function calculateBMI() {
+  const heightInMeters = userDetails.height / 100;
+  const bmi = userDetails.weight / (
+  heightInMeters * heightInMeters);
+  return bmi.toFixed(1);
 }
 
-getAllScores(100, 200, 600, 600, 700, 700)
-
-let student = {
-  studentName: "Sarhan",
-  rollNo: 101,
-  city: "Karachi"
+// Gym join kiye hue kitne din ho gaye
+function calculateJoinDays(joinDate, todayDate) {
+  const timeDifference = Math.abs(todayDate - joinDate);
+  const millisecondsPerDay = 1000 * 60 * 60 * 24;
+  return Math.floor(timeDifference / millisecondsPerDay);
 }
 
-function showStudentInfo(stundentInfo) {
+// Results output
+const totalCaloriesBurnt = calculateCalories(totalWorkoutMinutes);
+const totalDays = calculateJoinDays(userDetails.joinDate, userDetails.todayDate);
 
-  return console.log(
-    `Student Name is ${stundentInfo.studentName}
-and student roll no is ${stundentInfo.rollNo}
-and student city is ${stundentInfo.city}`);
-
-}
-
-showStudentInfo(student);
-
-let subjectMarks = [100, 20, 40, 70, 10];
-
-function marksChecker(marks) {
-
-  return console.log(marks[3]);
-
-}
-
-marksChecker(subjectMarks);
+console.log(`Hello ${userDetails.name}, you have worked out for a total of ${totalWorkoutMinutes} minutes and burnt ${totalCaloriesBurnt} calories. Keep it up!`);
+console.log(`Your BMI is: ${calculateBMI()}`);
+console.log(`You have been consistent for ${totalDays} days since joining!`);
