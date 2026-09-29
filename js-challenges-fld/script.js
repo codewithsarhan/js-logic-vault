@@ -1,47 +1,45 @@
-// Student Grade & Performance Analyzer +++ === +++ 
+// Student Profle Analyzer ::==
+let studentData = [
 
-let myFunction = () => {
+    { name: "ali", marks: 78 },
+    { name: "hamza", marks: 45 },
+    { name: "Sara", marks: 92 },
+    { name: "Zain", marks: 61 },
+    { name: "Ayesha", marks: 35 },
 
-let studentDetails = {
+]
 
-id : 1 ,
-name : prompt("Enter Your Name") ,
-student : true ,
-score : Number(prompt("Enter Your Score"))
+let totalCalculate = studentData[0].marks + studentData[1].marks
+    + studentData[2].marks + studentData[3].marks + studentData[4].marks;
+console.log(totalCalculate);
 
-}
+let average = totalCalculate / 3;
+console.log(average);
 
-if (studentDetails.score >= 50) {
-    
-    console.log("You Passed In Exam");
-    
-}else{
-
-console.log("You Failed Try Again Next Time");
-
-}
-
-
-let nameFormat = studentDetails.name.trim().toLowerCase();
-console.log(nameFormat);
+let highestMarks = Math.max(studentData[0].marks, studentData[1].marks,
+    studentData[2].marks, studentData[3].marks, studentData[4].marks,
+)
+console.log(highestMarks);
 
 
-let scoreArray = [100,200,150,120,180];
-
-let highestScore = Math.max(...scoreArray);
-let lowestScore = Math.min(...scoreArray);
-let averageScore = scoreArray.reduce((total , score) => total + score , 0);
-const average = averageScore / scoreArray.length;
+let lowestMarks = Math.min(studentData[0].marks, studentData[1].marks,
+    studentData[2].marks, studentData[3].marks, studentData[4].marks,
+)
+console.log(lowestMarks);
 
 
-console.log(`High Score ${highestScore}`);
-console.log(`Low Score ${lowestScore}`);
-console.log(`Average Score ${average}`);
+function resultCheckFunc (studentMarks , studentName)  {
 
-let exactDate = new Date()
-exactDate.toLocaleDateString();
-console.log(exactDate);
+if (studentMarks >= 50) {
+
+    console.log(`${studentName} is passed with ${studentMarks} Marks.`);
+
+} else {
+
+    console.log(`${studentName} is failed ${studentMarks} Marks`);
 
 }
 
-myFunction()
+}
+
+resultCheckFunc(studentData[0].marks , studentData[0].name)

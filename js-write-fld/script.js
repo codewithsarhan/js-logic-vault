@@ -1,47 +1,47 @@
-// "Student Data Handler"
+// Student Grade & Performance Analyzer +++ === +++ 
 
-function calculateMarks(num1, num2, num3) {
+let myFunction = () => {
 
-  return console.log(
-    `Total Marks Is :==${num1 + num2 + num3}`
-  );
+let studentDetails = {
 
-
-}
-
-calculateMarks(200, 300, 400)
-
-function getAllScores(...scores) {
-
-  return console.log(scores)
+id : 1 ,
+name : prompt("Enter Your Name") ,
+student : true ,
+score : Number(prompt("Enter Your Score"))
 
 }
 
-getAllScores(100, 200, 600, 600, 700, 700)
+if (studentDetails.score >= 50) {
+    
+    console.log("You Passed In Exam");
+    
+}else{
 
-let student = {
-  studentName: "Sarhan",
-  rollNo: 101,
-  city: "Karachi"
-}
-
-function showStudentInfo(stundentInfo) {
-
-  return console.log(
-    `Student Name is ${stundentInfo.studentName}
-and student roll no is ${stundentInfo.rollNo}
-and student city is ${stundentInfo.city}`);
+console.log("You Failed Try Again Next Time");
 
 }
 
-showStudentInfo(student);
 
-let subjectMarks = [100, 20, 40, 70, 10];
+let nameFormat = studentDetails.name.trim().toLowerCase();
+console.log(nameFormat);
 
-function marksChecker(marks) {
 
-  return console.log(marks[3]);
+let scoreArray = [100,200,150,120,180];
+
+let highestScore = Math.max(...scoreArray);
+let lowestScore = Math.min(...scoreArray);
+let averageScore = scoreArray.reduce((total , score) => total + score , 0);
+const average = averageScore / scoreArray.length;
+
+
+console.log(`High Score ${highestScore}`);
+console.log(`Low Score ${lowestScore}`);
+console.log(`Average Score ${average}`);
+
+let exactDate = new Date()
+exactDate.toLocaleDateString();
+console.log(exactDate);
 
 }
 
-marksChecker(subjectMarks);
+myFunction()
