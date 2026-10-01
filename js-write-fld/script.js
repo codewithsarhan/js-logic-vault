@@ -1,45 +1,70 @@
-// Student Profle Analyzer ::==
-let studentData = [
+// Challenge: Mission Control — Space Launch Console
 
-    { name: "ali", marks: 78 },
-    { name: "hamza", marks: 45 },
-    { name: "Sara", marks: 92 },
-    { name: "Zain", marks: 61 },
-    { name: "Ayesha", marks: 35 },
+(() => {
+    console.log("Mission Control System Initializing")
+})()
 
-]
+const astronaut = {
+    name: "Alin",
+    age: 38,
+    country: "America",
+    experienceYears: 12,
+    missionName: "Space Launch Mission",
+    oxygenLevel: 94,
+    fuelLevel: 87,
+    isReady: true
+};
 
-let totalCalculate = studentData[0].marks + studentData[1].marks
-    + studentData[2].marks + studentData[3].marks + studentData[4].marks;
-console.log(totalCalculate);
+function missionScore(agent) {
 
-let average = totalCalculate / 3;
-console.log(average);
+    const baseValue = agent.age || agent.experienceYears || 0;
 
-let highestMarks = Math.max(studentData[0].marks, studentData[1].marks,
-    studentData[2].marks, studentData[3].marks, studentData[4].marks,
-)
-console.log(highestMarks);
+    return baseValue * 10;
+}
 
+let missionScoreResult = missionScore(astronaut);
+console.log(`Mission Score : ${missionScoreResult}`);
 
-let lowestMarks = Math.min(studentData[0].marks, studentData[1].marks,
-    studentData[2].marks, studentData[3].marks, studentData[4].marks,
-)
-console.log(lowestMarks);
+let checkingFunction = (astronaut) => {
 
-
-function resultCheckFunc (studentMarks , studentName)  {
-
-if (studentMarks >= 50) {
-
-    console.log(`${studentName} is passed with ${studentMarks} Marks.`);
-
-} else {
-
-    console.log(`${studentName} is failed ${studentMarks} Marks`);
+    if (astronaut.oxygenLevel >= 80 &&
+        astronaut.fuelLevel >= 75 &&
+        astronaut.isReady >= true &&
+        astronaut.experienceYears >= 7) {
+        console.log("All Requiremnets Is Good You Ready To Going");
+    } else {
+        console.log("You Not Gone");
+    }
 
 }
 
+checkingFunction(astronaut);
+
+
+let emergencyLevel = () => {
+
+    let emergencyLevel = "low";
+
+    if (emergencyLevel == "low") {
+        console.log("Normal Launch");
+    } else if (emergencyLevel == "medium") {
+        console.log("Medium Launch");
+    } else {
+        console.log("High Launch");
+    }
+
 }
 
-resultCheckFunc(studentData[0].marks , studentData[0].name)
+emergencyLevel()
+
+let missionStart = new Date();
+
+let expectedLaunch = new Date();
+
+expectedLaunch.setDate(missionStart.getDate() + 45);
+expectedLaunch.setHours(missionStart.getHours() + 3);
+
+console.log(`Mission Start Date ${missionStart.toLocaleString()}`);
+console.log(`Expected Launch ${expectedLaunch.toLocaleString()}`);
+
+
