@@ -1,21 +1,104 @@
-// IIFE Concept Learn Today
-// What Is IIFE  ? 
-// IFFE ka means hota hain koi function apna bnaya woh emediatly run hona chaye bas ushi cheez ko iife kheta hain
-// IFFE ka bhi 2 types hain named IIFE or Unnamed IIFE samjhe
-// OR iife dono condition me kaam karta hai matlab normal function bhi or arrow function bhi 
+// Student Result Analyzer ++++++++++++++++++++
 
-(function fam(){
-    console.log("This Is Named Iife");
-})();
+let studentData = {
 
-(function unFam(name){
-    console.log(`This is my ${name}`);
-})("sarhan");
+    name: "Sarhan",
+    age: 16,
+    subjectMarks: [100, 200, 140, 130, 120],
+    attendace: 80,
 
-(()=>{
-console.log(`This Is Unamed IIFE`);
-})();
+}
 
-((unname)=>{
-console.log(`This Is Unnamed ${unname}`);
-})("-");
+let stMarks = studentData.subjectMarks;
+
+let maxMarksPerSubject = 200;
+let totalPossibleMarks = stMarks.length * maxMarksPerSubject;
+
+
+let totalMarks = stMarks.reduce((sum, curr) => sum + curr, 0);
+
+let percentage = (totalMarks / totalPossibleMarks) * 100;
+
+console.log(`Total Marks : ${totalMarks}`);
+console.log(`Percentage : ${percentage.toFixed(2)}%`);
+
+let passingMarks = 40;
+
+let passesAllSubj = stMarks.every(stMarks => stMarks >= passingMarks);
+
+let subj = "";
+
+if (passesAllSubj) {
+
+    subj = "passed"
+
+} else {
+    subj = "fail"
+}
+
+let student_Attendance = studentData.attendace;
+
+let st_Attedance = "";
+
+if (student_Attendance >= 70) {
+
+    st_Attedance = "Eligible"
+
+} else {
+
+    st_Attedance = "Not Eligible"
+}
+
+let result = "";
+
+if (subj === "passed" && st_Attedance === "Eligible") {
+    result = "Passed"
+    console.log(result);
+} else if (subj === "passed") {
+    result = "Subject Passed Attendace Not Eligible";
+    console.log(result);
+} else {
+    result = "Not Eligible";
+    console.log(result);
+}
+
+let grade = "";
+
+if (percentage >= 80) {
+    grade = "A"
+
+} else if (percentage >= 70) {
+    grade = "B"
+
+} else if (percentage >= 60) {
+    grade = "C"
+
+} else if (percentage >= 50) {
+    grade = "D"
+
+} else {
+    grade = "F"
+
+}
+
+function resultDisplay() {
+    console.log(`Result : ${result}`);
+
+}
+
+resultDisplay();
+
+
+let studentResult = {
+
+    Name: studentData.name,
+    Age: studentData.age,
+    Total_Marks: `${1000} / ${totalMarks}`,
+    Percentage: percentage,
+    Grade: grade,
+    Attendace: studentData.attendace,
+    Result: result,
+
+}
+
+console.log(studentResult);
