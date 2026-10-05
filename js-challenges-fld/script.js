@@ -1,76 +1,91 @@
-// Creator Analytics & Upload Scheduler
+// Smart Event Ticket System +++++++++++++++++
 
-let videoData = {
+let programInfo = {
 
-    channelName: "  coDin fAm",
-    viewPerShort: [1250, 4800, 3200, 9500, 2100],
-    avgTimeMinutes: 1.8459,
-    uploadDate: new Date("2026-10-04"),
-
-}
-
-let trimName = videoData.channelName ;
-
-let trimFunc = (channelName) => {
-
-    trimName = channelName.toLowerCase().trim();
-    console.log(trimName);
-
+    username: "sarhan",
+    age: 16,
+    ticketType: "student",
+    eventDate: new Date("2026-10-05"),
+    currentDate: new Date(),
+    hasMemberShip: true,
 
 }
 
-trimFunc(videoData.channelName)
+let ticketPrice = 0;
 
-let views = undefined ;
-let avgTime = undefined ;
+switch (programInfo.ticketType) {
+    case "standard":
+        ticketPrice = 2000;
+        console.log(ticketPrice);
 
-let veiwShortFunc = (viewPerShort , avgTimeMin) => {
-views = Math.max(...viewPerShort);
-console.log(views);
+        break;
 
-avgTime = Math.round(avgTimeMin)
-console.log(avgTime);
+    case "vip":
+        ticketPrice = 1500;
+        console.log(ticketPrice);
+        break;
 
+    case "student":
+        ticketPrice = 1200;
+        console.log(ticketPrice);
+        break;
+
+    default:
+        console.log("First Buy Ticket");
+        break;
 }
-veiwShortFunc(videoData.viewPerShort , videoData.avgTimeMinutes);
 
-let channelPerformance = undefined ;
+if (programInfo.age >= 18) {
+    console.log("Allowed");
 
-if (views >= 8000) {
-    channelPerformance = "Viral / High Engagement" ;
-    
-}else{
-    channelPerformance = "Steady Growth";
-    
-}
+} else if (programInfo.ticketType === "student") {
+    console.log("Allowed as a Student");
 
-
-let nextUploadDate = new Date(videoData.uploadDate);
-nextUploadDate.setDate(videoData.uploadDate.getDate() + 3);
-
-let options = { day: '2-digit', month: 'short', year: 'numeric' };
-let formattedDate = nextUploadDate.toLocaleDateString('en-GB', options).replace(/,/g, '');
-
-console.log(formattedDate);
-
-let creatorAnalytics = () => {
-
-let creator_Analytics = {
-
-    Channel_Handle : trimName ,
-    Total_Upload : "5 Shorts" ,
-    Total_Views : 20850 ,
-    best_Views : views,
-    Avg_WatchTime : avgTime,
-    Channel_Perfomance : channelPerformance ,
-    Last_Upload : videoData.uploadDate ,
-    Next_Schedule : formattedDate ,
-    Tip : "Ready For The Next Post !"
+} else {
+    console.log("Not Allowed Age Or Type");
 
 }
 
-console.log(creator_Analytics);
+let ticketQuanity = 5;
+
+if (ticketQuanity <= 5) {
+    console.log(`Valid Quantity ${ticketQuanity}`);
+
+} else if (ticketQuanity > 5) {
+    console.log(`Booking Invalid ${ticketQuanity}`);
+
+} else {
+    console.log("Booking Invalid");
 
 }
 
-creatorAnalytics();
+let eventBooking = "";
+
+if (programInfo.eventDate.getDate() < programInfo.currentDate.getDate()) {
+    eventBooking = "Booking Invalid Event Already Complete";
+    console.log(eventBooking);
+
+} else if (programInfo.eventDate.getDate() > programInfo.currentDate.getDate()) {
+    eventBooking = "Booking Continue";
+    console.log(eventBooking);
+
+} else if (programInfo.eventDate.getDate() === programInfo.currentDate.getDate()) {
+    eventBooking = "Booking Allowed"
+    console.log(eventBooking);
+
+} else {
+    console.log("Booking First");
+
+}
+
+if (programInfo.hasMemberShip === true) {
+    let totalPrice = ticketPrice * ticketQuanity;
+    let finalPrice = totalPrice - (totalPrice * (10 / 100));
+    console.log(`Total Price After 10% discount ${finalPrice}`);
+
+} else {
+    let totalPrice = ticketPrice * ticketQuanity;
+    console.log(`Total Price : ${totalPrice}`);
+
+}
+
