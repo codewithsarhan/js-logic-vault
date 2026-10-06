@@ -29,7 +29,8 @@ let totalCalc = (projectData) => {
 
         let time = projectData[i];
 
-        console.log(`Name : ${time.name} : Total Price ${time.hours * time.hourlyRate}`);
+        console.log(`Name : ${time.name}
+Total Price : ${time.hours * time.hourlyRate}`);
 
         let status = projectData[i];
 
