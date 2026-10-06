@@ -1,15 +1,55 @@
-//  Js Practice ::==
+// Freelancer Invoice Checker ++++++++++
 
-let players = ["Ali", "Ahmed", "Sara", "Hamza", "Zain", "Usman", "Ayan"];
-let scores = [45, 82, 0, 91, 63, 100, 28];
+const project = [
+    {
+        name: "Portfolio Website",
+        hours: 12,
+        hourlyRate: 1500,
+        paid: true
+    },
+    {
+        name: "Landing Page",
+        hours: 8,
+        hourlyRate: 1200,
+        paid: false
+    },
+    {
+        name: "Dashboard UI",
+        hours: 15,
+        hourlyRate: 1800,
+        paid: true
+    }
+];
 
-for(let i = 0 ; i <= players.length ; i++){
 
-for(let i = 0 ; i <= scores.length ; i++){
+let totalCalc = (projectData) => {
 
- console.log(`Player : ${players.length} Score : ${scores.length}`);
- 
+
+    for (let i = 0; i < projectData.length; i++) {
+
+        let time = projectData[i];
+
+        console.log(`Name : ${time.name} : Total Price ${time.hours * time.hourlyRate}`);
+
+        let status = projectData[i];
+
+        if (status.paid === true) {
+            console.log("Status : Paid");
+
+        } else {
+            console.log("Status : Pending");
+
+        }
+
+    }
+
+
+
+
 
 }
 
-}
+
+totalCalc(project)
+
+
