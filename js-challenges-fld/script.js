@@ -1,4 +1,4 @@
-// Student Result & Performance Manager
+// Student Result checker
 
 const students = [
     {
