@@ -1,71 +1,35 @@
-// Student Result checker
+// JS Challenge — Gym Workout Analyzer
 
-const students = [
-    {
-        name: "Ali",
-        rollNumber: 101,
-        marks: 78,
-        attendance: 85,
-    },
-    {
-        name: "Ahmed",
-        rollNumber: 102,
-        marks: 45,
-        attendance: 72,
-    },
-    {
-        name: "Sara",
-        rollNumber: 103,
-        marks: 92,
-        attendance: 91,
-    },
-    {
-        name: "Hamza",
-        rollNumber: 104,
-        marks: 33,
-        attendance: 68,
-    },
-];
+const exercises = ["Bench Press", "Squat", "Lat Pulldown", "Shoulder Press", "Bicep Curl"];
 
-let showStudent = () => {
-    console.log(students);
-};
+const reps = [10, 8, 12, 6, 15];
 
-let findStudent = () => {
-    let enterRollNum = Number(prompt("Enter Your Student Roll Number"));
+let total_Reps = 0;
+let highest_Reps = reps[0];
+let lowest_Reps = reps[0];
 
-    let studentDetails = students.find(
-        (students) => students.rollNumber === enterRollNum,
-    );
-    console.log(studentDetails);
-};
+for (let rep of reps) {
 
-let checkResult = () => {
-    for (let i = 0; i < students.length; i++) {
-        if (students[i].marks > 50 && students[i].attendance >= 72) {
-            console.log(`Name : ${students[i].name} Marks : 100 / ${students[i].marks} Attendance : 100 / ${students[i].attendance} result : Passed`);
-        } else {
-            console.log(`Name : ${students[i].name} Marks : 100 / ${students[i].marks} Attendance : 100 / ${students[i].attendance} result : Failed`);
-        }
-    }
-};
+    total_Reps += rep
 
-
-let checkMarks = () => {
-
-    let highestMarks = students[0];
-
-    for (let i = 0; i < students.length; i++) {
-
-        if (students[i].marks > highestMarks.marks) {
-            highestMarks = students[i];
-
-        }
-
+    if (rep > highest_Reps) {
+        highest_Reps = rep;
     }
 
-    console.log(highestMarks);
-
+    if (rep < lowest_Reps) {
+        lowest_Reps = rep
+    }
 }
-checkMarks()
 
+let average_Reps = total_Reps / reps.length;
+
+console.log(`Total Reps : ${total_Reps}`);
+console.log(`Average : ${average_Reps}`);
+console.log(`Highest Reps : ${highest_Reps}`);
+console.log(`Lowest Reps : ${lowest_Reps}`);
+
+let highReps = Math.max(...reps);
+let lowestReps = Math.min(...reps);
+
+console.log(`Good : ${highReps}`);
+console.log(`Need Improvement : ${lowestReps}`);
