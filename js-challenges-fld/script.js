@@ -1,35 +1,45 @@
-// JS Challenge — Gym Workout Analyzer
+// Day 1 — Shopping Budget Checker 
 
-const exercises = ["Bench Press", "Squat", "Lat Pulldown", "Shoulder Press", "Bicep Curl"];
+const budget = 2000;
+const prices = [450, 300, 650, 250, 500];
 
-const reps = [10, 8, 12, 6, 15];
+let total = 0;
 
-let total_Reps = 0;
-let highest_Reps = reps[0];
-let lowest_Reps = reps[0];
 
-for (let rep of reps) {
+for (let i = 0; i < prices.length; i++) {
 
-    total_Reps += rep
 
-    if (rep > highest_Reps) {
-        highest_Reps = rep;
-    }
+    total += prices[i];
 
-    if (rep < lowest_Reps) {
-        lowest_Reps = rep
-    }
+
+
 }
 
-let average_Reps = total_Reps / reps.length;
+console.log(total);
 
-console.log(`Total Reps : ${total_Reps}`);
-console.log(`Average : ${average_Reps}`);
-console.log(`Highest Reps : ${highest_Reps}`);
-console.log(`Lowest Reps : ${lowest_Reps}`);
+let wallet = 0;
 
-let highReps = Math.max(...reps);
-let lowestReps = Math.min(...reps);
+if (total <= budget) {
+    console.log("You Buy Under Budget");
+    wallet = total - budget;
+    console.log(`You Budget : ${budget} Your Total ${total} Money No Need ${wallet}`);
 
-console.log(`Good : ${highReps}`);
-console.log(`Need Improvement : ${lowestReps}`);
+
+
+} else {
+    console.log("You Buy Outer Budget Need More");
+    wallet = total - budget;
+    console.log(`You Budget : ${budget}, Your Total : ${total} , Money Need : ${wallet}`);
+
+
+}
+
+let shoppingData = () => {
+
+    console.log(`Budget : ${budget}, Buying Item Prices : ${prices}, 
+Total Item Prices : ${total} `);
+
+
+}
+
+shoppingData()
