@@ -1,21 +1,41 @@
-// Mobile Data Checker :==
+// Day 3 — E-commerce Order Checker 
 
-const totalData = 5;
-const usedData = 3.2;
+const prices = [800, 450, 600];
+const budget = 2000;
+const deliveryFee = 150;
 
-let dataChecker = () => {
+let total = 0;
 
-    let remaingData = totalData - usedData;
-    console.log(`Remaning Data : ${remaingData}`);
+for (let val of prices) {
 
-    if (usedData <= totalData) {
-        console.log("You Not Used Complete Data");
-
-    } else {
-        console.log("You Used Complete Data");
-
-    }
+    total = total += val;
 
 }
 
-dataChecker()
+
+let finalPrice = total + deliveryFee;
+
+
+let bugetTracker = "";
+
+if (finalPrice <= budget) {
+    bugetTracker = "Buy Item Under budget"
+
+} else {
+    bugetTracker = "Budget Out"
+
+}
+
+let finalBill = () => {
+
+    console.log(`Prices :- ${prices}
+Budget :- ${budget}
+DeliveryFee :- ${deliveryFee}
+Total Bill :- ${total}
+Final Prices :- ${finalPrice}
+Budget Tracker :- ${bugetTracker} `);
+
+
+}
+
+finalBill();
