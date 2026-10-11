@@ -1,56 +1,32 @@
-// Freelancer Invoice Checker ++++++++++
+// For Of Loop Concept Learn ;
 
-const project = [
-    {
-        name: "Portfolio Website",
-        hours: 12,
-        hourlyRate: 1500,
-        paid: true
-    },
-    {
-        name: "Landing Page",
-        hours: 8,
-        hourlyRate: 1200,
-        paid: false
-    },
-    {
-        name: "Dashboard UI",
-        hours: 15,
-        hourlyRate: 1800,
-        paid: true
-    }
-];
+let myArray = [1,2,3,4,5,6];
 
+for(let val of myArray){
 
-let totalCalc = (projectData) => {
-
-
-    for (let i = 0; i < projectData.length; i++) {
-
-        let time = projectData[i];
-
-        console.log(`Name : ${time.name}
-Total Price : ${time.hours * time.hourlyRate}`);
-
-        let status = projectData[i];
-
-        if (status.paid === true) {
-            console.log("Status : Paid");
-
-        } else {
-            console.log("Status : Pending");
-
-        }
-
-    }
-
-
-
-
+    // console.log(val);
+    
 
 }
 
 
-totalCalc(project)
+let map = new Map();
+map.set('Name' , 'Sarhan')
+map.set('Age' , 16)
+map.set('isStudent' , true)
 
+
+for (const [key , value] of map) {
+    // console.log(key , ':-' , value);
+    
+}
+
+
+let myObj = {
+
+    name : "Sarhan",
+    age : 16 , 
+    class : 11 ,
+    isStudent : true ,
+}
 
