@@ -1,21 +1,33 @@
-// Mobile Data Checker :==
+// Day 4 — Gaming XP Tracker
 
-const totalData = 5;
-const usedData = 3.2;
+const xpEarned = [120, 250, 180];
+const currentXP = 400;
+const targetXP = 1000;
 
-let dataChecker = () => {
+let totalXp = 0;
 
-    let remaingData = totalData - usedData;
-    console.log(`Remaning Data : ${remaingData}`);
-
-    if (usedData <= totalData) {
-        console.log("You Not Used Complete Data");
-
-    } else {
-        console.log("You Used Complete Data");
-
-    }
-
+for (let val of xpEarned) {
+    totalXp = totalXp += val;
 }
 
-dataChecker()
+let totalCurr = totalXp + currentXP;
+
+let target = "";
+
+if (totalCurr >= targetXP) {
+    target = "Target Complete"
+} else {
+    target = "Target Incomplete"
+}
+
+let xpCheckerFunction = () => {
+
+    console.log(`Exp Earned : ${xpEarned}
+Current Exp : ${currentXP}
+Target Xp : ${targetXP}
+Total Exp : ${totalXp}
+Total Current : ${totalCurr}`);
+
+
+}
+xpCheckerFunction();
