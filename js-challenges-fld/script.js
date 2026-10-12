@@ -1,41 +1,33 @@
-// Day 3 — E-commerce Order Checker 
+// Day 4 — Gaming XP Tracker
 
-const prices = [800, 450, 600];
-const budget = 2000;
-const deliveryFee = 150;
+const xpEarned = [120, 250, 180];
+const currentXP = 400;
+const targetXP = 1000;
 
-let total = 0;
+let totalXp = 0;
 
-for (let val of prices) {
-
-    total = total += val;
-
+for (let val of xpEarned) {
+    totalXp = totalXp += val;
 }
 
+let totalCurr = totalXp + currentXP;
 
-let finalPrice = total + deliveryFee;
+let target = "";
 
-
-let bugetTracker = "";
-
-if (finalPrice <= budget) {
-    bugetTracker = "Buy Item Under budget"
-
+if (totalCurr >= targetXP) {
+    target = "Target Complete"
 } else {
-    bugetTracker = "Budget Out"
-
+    target = "Target Incomplete"
 }
 
-let finalBill = () => {
+let xpCheckerFunction = () => {
 
-    console.log(`Prices :- ${prices}
-Budget :- ${budget}
-DeliveryFee :- ${deliveryFee}
-Total Bill :- ${total}
-Final Prices :- ${finalPrice}
-Budget Tracker :- ${bugetTracker} `);
+    console.log(`Exp Earned : ${xpEarned}
+Current Exp : ${currentXP}
+Target Xp : ${targetXP}
+Total Exp : ${totalXp}
+Total Current : ${totalCurr}`);
 
 
 }
-
-finalBill();
+xpCheckerFunction();
