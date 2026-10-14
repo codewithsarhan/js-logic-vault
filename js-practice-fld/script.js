@@ -1,36 +1,33 @@
-// Day 5 — Login Security Checker
+// Day 6 — Game Inventory Checker
 
-const username = "Sarhan";
-const password = "jsMaster16";
-const accountActive = true;
-const loginAttempts = 2;
+const inventory = {
+    sword: 1,
+    potions: 4,
+    coins: 250,
+    armor: 1
+};
 
-let login_Details = () => {
+const requiredItems = ["sword", "potions", "shield"];
 
-    if (username === "Sarhan" && password === "jsMaster16") {
-        console.log("Uswerame Password Is Correct");
+for (let inVal in inventory) {
 
-    } else {
-        console.log("Username Password Is Incorrect");
+    console.log(inVal, inventory[inVal]);
 
-    }
 
-    if (accountActive === true) {
-        console.log(`Account Status : ${accountActive}`);
+}
 
-    } else {
-        console.log(`Account Status : ${accountActive}`);
 
-    }
+for (let reqVals of requiredItems) {
 
-    if (loginAttempts >= 3) {
-        console.log("Account Is Temprory Blocked");
+    console.log(reqVals);
+
+    if (reqVals in inventory) {
+        console.log(`Owned Items : ${reqVals}`);
 
     } else {
-        console.log("Login SucessFull");
+        console.log(`Missing Items : ${reqVals}`);
 
     }
 
 }
 
-login_Details()
