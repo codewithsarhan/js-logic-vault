@@ -1,33 +1,33 @@
-// Day 6 — Game Inventory Checker
+// Day 7 — Game Quest Manager
 
-const inventory = {
-    sword: 1,
-    potions: 4,
-    coins: 250,
-    armor: 1
-};
+const quests = [
+  { name: "Find Key", completed: true, reward: 100 },
+  { name: "Defeat Boss", completed: false, reward: 500 },
+  { name: "Collect Gems", completed: true, reward: 200 },
+  { name: "Rescue NPC", completed: false, reward: 300 }
+];
 
-const requiredItems = ["sword", "potions", "shield"];
 
-for (let inVal in inventory) {
+let total = 0;
 
-    console.log(inVal, inventory[inVal]);
+for (let val of quests) {
 
+  console.log(`Name : ${val.name} 
+Status : ${val.completed}`);
+
+
+  let rewardCalc = () => {
+    total += val.reward;
+  }
+  rewardCalc()
+
+  if (val.completed === true) {
+    console.log("All Mission Is completed");
+
+  } else {
+    console.log("Not completed");
+
+  }
 
 }
-
-
-for (let reqVals of requiredItems) {
-
-    console.log(reqVals);
-
-    if (reqVals in inventory) {
-        console.log(`Owned Items : ${reqVals}`);
-
-    } else {
-        console.log(`Missing Items : ${reqVals}`);
-
-    }
-
-}
-
+console.log(`Total : ${total}`);
