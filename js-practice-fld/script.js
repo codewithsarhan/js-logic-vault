@@ -1,33 +1,29 @@
-// Day 7 — Game Quest Manager
+// Day 9 — Fitness Progress Analyzer
 
-const quests = [
-  { name: "Find Key", completed: true, reward: 100 },
-  { name: "Defeat Boss", completed: false, reward: 500 },
-  { name: "Collect Gems", completed: true, reward: 200 },
-  { name: "Rescue NPC", completed: false, reward: 300 }
+const workouts = [
+  { exercise: "Bench Press", reps: 8, target: 10 },
+  { exercise: "Squats", reps: 12, target: 10 },
+  { exercise: "Pull-ups", reps: 5, target: 8 },
+  { exercise: "Shoulder Press", reps: 10, target: 10 }
 ];
 
+workouts.map((workouts) => {
+  return console.log(`Excercise  : ${workouts.exercise}
+Target Reps: ${workouts.reps} 
+Total Reps : ${workouts.reps}`);
+})
 
-let total = 0;
-
-for (let val of quests) {
-
-  console.log(`Name : ${val.name} 
-Status : ${val.completed}`);
-
-
-  let rewardCalc = () => {
-    total += val.reward;
-  }
-  rewardCalc()
-
-  if (val.completed === true) {
-    console.log("All Mission Is completed");
+for (let val of workouts) {
+  if (val.target >= val.reps) {
+    console.log(`Target Achieved : ${val.exercise}`);
 
   } else {
-    console.log("Not completed");
+    console.log(`Target Not Achieved : ${val.exercise}`);
 
   }
+}
+
+for (let val in workouts) {
+  console.log(val, workouts[val]);
 
 }
-console.log(`Total : ${total}`);
