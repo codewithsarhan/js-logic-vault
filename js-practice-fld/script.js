@@ -1,29 +1,21 @@
-// Day 9 — Fitness Progress Analyzer
+let myNums = [1, 2, 3, 4, 5, 6, 7];
 
-const workouts = [
-  { exercise: "Bench Press", reps: 8, target: 10 },
-  { exercise: "Squats", reps: 12, target: 10 },
-  { exercise: "Pull-ups", reps: 5, target: 8 },
-  { exercise: "Shoulder Press", reps: 10, target: 10 }
-];
+// myNums.forEach((n)=>{
+// console.log(n);
 
-workouts.map((workouts) => {
-  return console.log(`Excercise  : ${workouts.exercise}
-Target Reps: ${workouts.reps} 
-Total Reps : ${workouts.reps}`);
-})
+// })
 
-for (let val of workouts) {
-  if (val.target >= val.reps) {
-    console.log(`Target Achieved : ${val.exercise}`);
+// let total = myNums.filter((n)=>{
+// return n >= 3
+// })
 
-  } else {
-    console.log(`Target Not Achieved : ${val.exercise}`);
+// console.log(total);
 
-  }
-}
+// let total = myNums.map((n)=>{
+// return n + 1
+// })
 
-for (let val in workouts) {
-  console.log(val, workouts[val]);
+// console.log(total);
 
-}
+// let total = myNums.reduce((acc , curr) => acc + curr , 0)
+// console.log(total);
