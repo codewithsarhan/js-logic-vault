@@ -1,21 +1,33 @@
-let myNums = [1, 2, 3, 4, 5, 6, 7];
+// Day 10 — Game Inventory Checker
 
-// myNums.forEach((n)=>{
-// console.log(n);
+const inventory = [
+  { name: "Sword", price: 1200, owned: true, level: 5 },
+  { name: "Shield", price: 800, owned: false, level: 0 },
+  { name: "Armor", price: 2000, owned: true, level: 3 },
+  { name: "Potion", price: 150, owned: false, level: 0 }
+];
 
-// })
+let ownedItems = inventory.filter((own) => {
+  return own.owned === true
+})
 
-// let total = myNums.filter((n)=>{
-// return n >= 3
-// })
+console.log(ownedItems);
 
-// console.log(total);
+let discountPrice = inventory.map((discPrc) => {
+  return discPrc.price * 0.8;
+})
 
-// let total = myNums.map((n)=>{
-// return n + 1
-// })
+console.log(discountPrice);
 
-// console.log(total);
+for (let items of inventory) {
+  console.log(`Item: ${items.name} , Status : ${items.owned}`);
 
-// let total = myNums.reduce((acc , curr) => acc + curr , 0)
-// console.log(total);
+  if (items.level >= 5) {
+    console.log(`Name : ${items.name} & Level : ${items.level}`);
+
+  } else {
+    console.log(`Name : ${items.name} & Level : ${items.level}`);
+
+  }
+
+}
