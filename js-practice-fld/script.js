@@ -1,25 +1,29 @@
-// Day 11 — Game Shop Sales Analyzer 
-
-const sales = [
-  { item: "Sword", price: 1200, sold: 3 },
-  { item: "Shield", price: 800, sold: 2 },
-  { item: "Potion", price: 150, sold: 10 },
-  { item: "Armor", price: 2000, sold: 1 }
+const cart = [
+  { name: "Mouse", price: 500, quantity: 2 },
+  { name: "Keyboard", price: 1200, quantity: 1 },
+  { name: "Headphones", price: 800, quantity: 3 }
 ];
 
-sales.forEach((num) => {
-  console.log("Sold Price : " + num.price * num.sold)
+let total = 0;
+
+cart.forEach((item) => {
+  total = item.price * item.quantity;
 });
 
+console.log("Total:", total);
 
-let total_Sales = sales.map(acc => acc.price);
-console.log("Total Sales : " + total_Sales);
+const cheapItems = cart.filter((item) => {
+ return  item.price < 1000;
+});
 
+console.log("Cheap Items:", cheapItems);
 
-let high_sell = sales.filter(sale => sale.sold >= 5);
-console.log(high_sell);
+const names = cart.map((item) => item.name.toUpperCase());
 
-let total_Amount = sales.reduce((acc, curr) => {
-  return acc + curr.price;
-}, 0)
-console.log("Total Amount :" + total_Amount);
+console.log("Names:", names);
+
+if (total > 3000) {
+  console.log("Free Delivery");
+} else {
+  console.log("Delivery Charges Apply");
+}
