@@ -1,33 +1,25 @@
-// Day 10 — Game Inventory Checker
+// Day 11 — Game Shop Sales Analyzer 
 
-const inventory = [
-  { name: "Sword", price: 1200, owned: true, level: 5 },
-  { name: "Shield", price: 800, owned: false, level: 0 },
-  { name: "Armor", price: 2000, owned: true, level: 3 },
-  { name: "Potion", price: 150, owned: false, level: 0 }
+const sales = [
+  { item: "Sword", price: 1200, sold: 3 },
+  { item: "Shield", price: 800, sold: 2 },
+  { item: "Potion", price: 150, sold: 10 },
+  { item: "Armor", price: 2000, sold: 1 }
 ];
 
-let ownedItems = inventory.filter((own) => {
-  return own.owned === true
-})
+sales.forEach((num) => {
+  console.log("Sold Price : " + num.price * num.sold)
+});
 
-console.log(ownedItems);
 
-let discountPrice = inventory.map((discPrc) => {
-  return discPrc.price * 0.8;
-})
+let total_Sales = sales.map(acc => acc.price);
+console.log("Total Sales : " + total_Sales);
 
-console.log(discountPrice);
 
-for (let items of inventory) {
-  console.log(`Item: ${items.name} , Status : ${items.owned}`);
+let high_sell = sales.filter(sale => sale.sold >= 5);
+console.log(high_sell);
 
-  if (items.level >= 5) {
-    console.log(`Name : ${items.name} & Level : ${items.level}`);
-
-  } else {
-    console.log(`Name : ${items.name} & Level : ${items.level}`);
-
-  }
-
-}
+let total_Amount = sales.reduce((acc, curr) => {
+  return acc + curr.price;
+}, 0)
+console.log("Total Amount :" + total_Amount);
