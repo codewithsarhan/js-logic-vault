@@ -8,6 +8,34 @@
 <body>
 
 
-    <script src="script.js"></script>
+    
+<p>Cart items: <span id="count">0</span></p>
+<p>Total: Rs. <span id="total">0</span></p>
+<button id="add">Add item (Rs. 250)</button>
+
+<script>
+const countEl = document.querySelector("#count");
+const totalEl = document.querySelector("#total");
+const button = document.querySelector("#add");
+
+let count = 0;
+let total = 0;
+
+button.addEventListener("click", () => {
+  count++;
+  total = 250;
+
+  countEl.textContent = count;
+  totalEl.textContent = total;
+
+  if (count >= 3) {
+    countEl.style.color = "red";
+  } else {
+    totalEl.style.color = "black";
+  }
+});
+</script>
+
+
 </body>
 </html>
