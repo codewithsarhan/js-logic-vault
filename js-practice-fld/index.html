@@ -1,41 +1,45 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challengs</title>
-</head>
+<html>
 <body>
+  <h2>Daily Goal Tracker</h2>
 
+  <p id="summary">Your progress will appear here.</p>
+  <ul id="goalList"></ul>
 
-    
-<p>Cart items: <span id="count">0</span></p>
-<p>Total: Rs. <span id="total">0</span></p>
-<button id="add">Add item (Rs. 250)</button>
+  <button id="checkBtn">Check Progress</button>
 
-<script>
-const countEl = document.querySelector("#count");
-const totalEl = document.querySelector("#total");
-const button = document.querySelector("#add");
+  <script>
+    const goals = [
+      { name: "Learn JavaScript", completed: true },
+      { name: "Practice arrays", completed: false },
+      { name: "Build a project", completed: true }
+    ];
 
-let count = 0;
-let total = 0;
+    const summary = document.getElementById("summary");
+    const goalList = document.getElementById("goalList");
+    const button = document.getElementById("checkBtn");
 
-button.addEventListener("click", () => {
-  count++;
-  total = 250;
+    button.addEventListener("click", function () {
+      let completedCount = 0;
 
-  countEl.textContent = count;
-  totalEl.textContent = total;
+      goals.forEach(function (goal) {
+        if (goal.completed === true) {
+          completedCount++;
+        }
+        
 
-  if (count >= 3) {
-    countEl.style.color = "red";
-  } else {
-    totalEl.style.color = "black";
-  }
-});
-</script>
+        goalList.innerHTML +=
+          `<li>${goal.name} - ${goal.completed ? "Done" : "Pending"}</li>`;
+      });
 
+      summary.textContent =
+        "Completed: " + completedCount + " / " + goal.length;
 
+      if (completedCount === goals.length) {
+        summary.textContent = "All goals completed!";
+      }
+    });
+  </script>
 </body>
 </html>
