@@ -1,22 +1,10 @@
-let week = document.querySelector(".parent");
-console.log(week.children);
-console.log(week.firstElementChild.innerHTML);
-console.log(week.lastElementChild.innerHTML);
+let body = document.querySelector('body');
+let div = document.createElement('div');
+div.className = "main-cn";
+div.id = "cn";
+div.style.backgroundColor = "Pink";
+div.style.Color = "blue";
+div.textContent = "Learn JavaScript";
 
-for(let i = 0 ; i < week.children.length ; i++){
-
-console.log( "today weak day" , week.children[i].innerHTML);
-
-}
-
-let monday = week.children[0];
-console.log(monday.nextElementSibling.innerHTML);
-console.log(monday.nextElementSibling.previousElementSibling.innerHTML);
-
-if (week.children.length === week.childNodes.length) {
-    console.log("Its Equal");
-    
-}else{
-    console.log("Its Not Equal");
-    
-}
+body.appendChild(div)
+console.log(div);
