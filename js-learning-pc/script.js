@@ -1,28 +1,27 @@
-let wellcomeMsg = document.querySelector("#wellmsg");
-let disc = document.querySelector('#disc');
+async function datalearning() {
+    
+let productData = await fetch('https://dummyjson.com/products/10');
+let convertJson = await productData.json();
+console.log(convertJson);
 
-wellcomeMsg.textContent = "Wellcome Back Bro";
-disc.style.backgroundColor = "green";
-disc.style.color = "white";
+let genDataBtn = document.querySelector('#genDataBtn');
+let prName = document.querySelector('#prName');
+let prImg = document.querySelector('#prImg');
+let prPrice = document.querySelector('#prPrice');
 
-let ageHead = document.createElement('h2');
-let profileContainer = document.createElement('div');
+genDataBtn.addEventListener("click" , () => {
 
-profileContainer.style.height = "300px"
-profileContainer.style.width = "300px"
-profileContainer.style.backgroundColor = "lightblue"
-profileContainer.style.Color = "black"
+prImg.src = convertJson.images[1] ;
+prPrice.textContent = convertJson.price;
 
-let body = document.querySelector('body');
+    
+console.log(prImg);
+console.log(prName);
+console.log(prPrice);
 
-ageHead.textContent = "Hello"
+})
 
+}
 
-body.appendChild(profileContainer)
-profileContainer.appendChild(ageHead)
+datalearning()
 
-let parentCn = document.querySelector('#parentCn')
-let newbtn = document.createElement('button');
-newbtn.textContent = "6";
-profileContainer.appendChild(newbtn)
-profileContainer.replaceChild(newbtn , ageHead)
