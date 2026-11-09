@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JS Events Practice</title>
+    <style>
+        body { background-color: #2b2b2b; color: #eceff4; font-family: sans-serif; padding: 20px; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #3b4252; margin: 10px 0; padding: 12px; display: flex; justify-content: space-between; align-items: center; border-radius: 6px; }
+        img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; cursor: pointer; }
+        button.delete-btn { background: #bf616a; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+        a { color: #88c0d0; text-decoration: none; }
+    </style>
 </head>
-
 <body>
 
+    <h2>Product Dashboard</h2>
+    <ul id="product-list">
+        <li>
+            <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg" alt="Camera">
+            <span>DSLR Camera</span>
+            <button class="delete-btn">Delete</button>
+        </li>
+        <li>
+            <img src="https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg" alt="Phone">
+            <span>Smartphone</span>
+            <button class="delete-btn">Delete</button>
+        </li>
+        <li>
+            <a href="https://google.com" id="external-link">Visit Official Store</a>
+        </li>
+    </ul>
 
-    <button id="genDataBtn">Generate Data</button>
-
-    <div>
-    <h1>Product Name :- </h1>
-    <span id="prName">Name<span />
-        <br>
-        <img src="" alt="" id="prImg">
-        <br><br>
-        <h5>Price : </h5>
-        <h4 id="prPrice">000<h4/>
-            </div>
-
-
-            <script src="script.js"></script>
-        </body>
+    <script src="script.js">
+    </script>
+</body>
 </html>

@@ -1,27 +1,28 @@
-async function datalearning() {
+let productlist = document.querySelector('#product-list')
+
+productlist.addEventListener('click' , (event) => {
+
+console.log(event.target.tagName)
+
+if (event.target.tagName === 'IMG') {
     
-let productData = await fetch('https://dummyjson.com/products/10');
-let convertJson = await productData.json();
-console.log(convertJson);
 
-let genDataBtn = document.querySelector('#genDataBtn');
-let prName = document.querySelector('#prName');
-let prImg = document.querySelector('#prImg');
-let prPrice = document.querySelector('#prPrice');
+console.log(event.target);
 
-genDataBtn.addEventListener("click" , () => {
-
-prImg.src = convertJson.images[1] ;
-prPrice.textContent = convertJson.price;
-
-    
-console.log(prImg);
-console.log(prName);
-console.log(prPrice);
-
-})
 
 }
 
-datalearning()
+if (event.target.tagName === 'BUTTON') {
+    
+let removeList = event.target.parentNode ;
+removeList.remove()
 
+}
+
+if (event.target.tagName === 'A') {
+    
+    event.preventDefault()
+
+}
+
+})
