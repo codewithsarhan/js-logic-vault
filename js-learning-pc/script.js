@@ -8,7 +8,7 @@ let hex = '0123456789ABCDEF'
 
 let color = '#'
 
-for(let i = 0 ; i < 6 ; i++){
+for(let i = 0 ; i < 10 ; i++){
 
 color += hex[Math.floor(Math.random() * 16)];
 
@@ -17,6 +17,9 @@ color += hex[Math.floor(Math.random() * 16)];
 return color ;
 
 }
+
+console.log(colorGenerator());
+
 
 let time= [] ;
 
