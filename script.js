@@ -1,45 +1,31 @@
-let stopButton = document.querySelector('#btn2');
-let startButton = document.querySelector('#btn1');
-let body = document.querySelector('body')
+let xhr = new XMLHttpRequest();
+let url = "https://dummyjson.com/posts";
 
+xhr.open("GET" , url);
 
-let colorGenerator = () => {
-let hex = '0123456789ABCDEF'
+xhr.onreadystatechange = function(){
 
-let color = '#'
+    console.log(xhr.readyState);
 
-for(let i = 0 ; i < 6 ; i++){
+    if (xhr.readyState === 4) {
+        
+    let convertJson = JSON.parse(xhr.responseText);
+    let posts = convertJson.posts;
+    
+    
+    posts.forEach(function(postData) {
+        
+        console.log(`Post Id : ${postData.id} and Post Title : ${postData.title}`);
 
-color += hex[Math.floor(Math.random() * 16)];
+        
+
+    });
+    
+        
+
+    }
+    
 
 }
 
-return color ;
-
-}
-
-console.log(colorGenerator());
-
-
-let time= [] ;
-
-startButton.addEventListener('click' , () => {
-
-time = setInterval(function (){
-
-    let color = colorGenerator();
-
-    body.style.backgroundColor = color ;
-
-}, 1000)
-
-})
-
-stopButton.addEventListener('click' , () => {
-
-clearInterval(time);
-console.log('Stopped');
-
-
-})
-
+xhr.send();
