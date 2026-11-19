@@ -1,31 +1,16 @@
-let xhr = new XMLHttpRequest();
-let url = "https://dummyjson.com/posts";
+function wallet(ownerName , balance){
 
-xhr.open("GET" , url);
+this.ownerName = ownerName;
+this.balance = balance;
 
-xhr.onreadystatechange = function(){
+console.log(this.ownerName);
+console.log(this.balance);
 
-    console.log(xhr.readyState);
 
-    if (xhr.readyState === 4) {
-        
-    let convertJson = JSON.parse(xhr.responseText);
-    let posts = convertJson.posts;
-    
-    
-    posts.forEach(function(postData) {
-        
-        console.log(`Post Id : ${postData.id} and Post Title : ${postData.title}`);
-
-        
-
-    });
-    
-        
-
-    }
-    
 
 }
 
-xhr.send();
+const newUser = new wallet("Jamshaid" , 10000);
+const secUser = new wallet("Bully" , 100000000000000000);
+
+wallet()
